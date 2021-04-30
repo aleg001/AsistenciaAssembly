@@ -29,10 +29,10 @@ cuadrado:
    
 	mov pc,lr
 
-.global multiplicacionC
-multiplicacionC:
+.global restacuad
+restacuad:
    mul r1,r1,r1
    mul r2,r2,r2 @multiplicacion
-   mul r0,r1,r2
+   sub r0,r1,r2
 
    mov pc,lr
