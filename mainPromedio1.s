@@ -10,6 +10,10 @@
    r1: envio de parametros para subrutinas promedio, printf, scanf
    ***************************************************************** */
 
+	/* ADAPTACION DE PROGRAMA PARA
+   	   EJERCICIO DE ASISTENCIA.
+	Cambios realizados por: Alejandro Gómez */
+
 .data
 .align 2
 datoPromedio:	.word	0 /*Almacena el promedio de los dos numeros*/
@@ -20,7 +24,7 @@ dato2:			.word	5
 formatos:		.asciz	"%d"
 stringIngreso:	.asciz	"Ingrese un numero: "
 bienvenida:		.asciz	"Bienvenid@! Este programa calcula el promedio de dos numeros, uno almacenado en memoria y uno ingresado por usted."
-error:			.asciz	"Error, el dato ingresado es incorrecto. Intente nuevamente."
+error:			.asciz	"Cuidado mi pana!! El dato ingresado es incorrecto. Intente nuevamente."
 
 .text
 .align 2
@@ -40,6 +44,11 @@ main:
 		bl puts
 		ldr r0,=formatos
 		ldr r1,=datoIng
+		bl scanf
+		
+		/* Se agrega opcion para ingreso del segundo valor */
+		ldr r0,=formatos
+		ldr r2,=dato2
 		bl scanf
 
 	/*Programacion defensiva
