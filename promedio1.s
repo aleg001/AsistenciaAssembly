@@ -20,3 +20,19 @@ promedio:
 	add r0,r0,r1
 	lsr r0,#1	@division entre 2
 	mov pc,lr
+
+.global cuadrado
+cuadrado:
+	mul r1,r1,r1 
+   mul r2,r2,r2 @al cuadrado
+   add r0,r1,r2 
+   
+	mov pc,lr
+
+.global multiplicacionC
+multiplicacionC:
+   mul r1,r1,r1
+   mul r2,r2,r2 @multiplicacion
+   mul r0,r1,r2
+
+   mov pc,lr
